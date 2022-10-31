@@ -1,10 +1,10 @@
 import pandas
 import numpy as np
 import os
-files = os.listdir("C:/Users/Pathfinder/Desktop/work/MSc KIS/10 Abschlussarbeit - 30LP/fMRT Eventlogs/measurements/")
+files = os.listdir("~/fMRT Eventlogs/measurements/")
 for file in files:
-    dat=pandas.read_csv('C:/Users/Pathfinder/Desktop/work/MSc KIS/10 Abschlussarbeit - 30LP/fMRT Eventlogs/measurements/' + file, sep='\t')
-    dat2=pandas.read_csv('C:/Users/Pathfinder/Desktop/work/MSc KIS/9 Vertiefungsmodul - MRT - 24LP/TAM-Similarities-Data/Datasets/AVLnet_sim/sim_Audio_Video.csv', index_col=(0))
+    dat=pandas.read_csv('~/fMRT Eventlogs/measurements/' + file, sep='\t')
+    dat2=pandas.read_csv('~/TAM-Similarities-Data/Datasets/AVLnet_sim/sim_Audio_Video.csv', index_col=(0))
     transferlist=[]
     for idx in range(len(dat)):
         f_name = dat.loc[idx,'stim_file']
@@ -32,4 +32,4 @@ for file in files:
             sim_list.append(sim_value[0])
     #dat['videonames'] = transferlist
     dat['eigenvalues'] = sim_list
-    dat.to_csv('C:/Users/Pathfinder/Desktop/work/MSc KIS/10 Abschlussarbeit - 30LP/fMRT Eventlogs/combined/' +file, index = False, sep='\t')
+    dat.to_csv('~/fMRT Eventlogs/combined/' +file, index = False, sep='\t')
