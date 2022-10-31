@@ -32,4 +32,4 @@ for file in files:
             sim_list.append(sim_value[0])
     #dat['videonames'] = transferlist
     dat['eigenvalues'] = sim_list
-    dat.to_csv('~/fMRT Eventlogs/combined/' +file, index = False, sep='\t')
+    dat.to_csv('~/fMRT Eventlogs/combined/AVL/' +file, index = False, sep='\t')
